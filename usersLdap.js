@@ -1,9 +1,29 @@
 componentDidMount = () => {
-  SFTAxios.get(this.props.getMyFollowersURL).then(({ data = null } = {}) => {
+  this.setState({ loading: true }, () => {
+    SFTAxios.get(this.props.getMyFollowersURL).then(({ data = null } = {}) => {
+      this.setCompleteFollowersData(data);
       this.setState({
         projectsInfoObj: Array.isArray(data) && data.length > 0 && data[0].alerts,
-        loading: false,
       });
-    }
-  )
+    }).catch( err => this.setState({ loading: false }));
+  })
+}
+
+const setCompleteFollowersData = async (res) => {
+  const users = await Array.isArray(res) && res.map(one => {
+    const { last_updated_user = '' } = one;
+    SFTAxios.post(this.props.getUserByLdapURL, { value: last_updated_user }).then((sres) => {
+      const { data = null } = sres;
+      const [cn = '', sAMAccountName = ''] = Array.isArray(data) ? data[0] : {};
+      const follower_name =  `${cn}, ${sAMAccountName}`;
+      one.follower_name = follower_name
+      return one;
+    });
+    console.log(users)
+    await this.setState({
+      users,
+      loading: false,
+    })
+
+  })
 }

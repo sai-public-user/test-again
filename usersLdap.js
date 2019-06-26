@@ -1,9 +1,10 @@
 componentDidMount = () => {
   this.setState({ loading: true }, () => {
     SFTAxios.get(this.props.getMyFollowersURL).then(({ data = null } = {}) => {
-      this.setCompleteFollowersData(data);
+      const alerts = Array.isArray(data) && data.length > 0 ? data[0].alerts : [];
+      this.setCompleteFollowersData(alerts);
       this.setState({
-        projectsInfoObj: Array.isArray(data) && data.length > 0 && data[0].alerts,
+        projectsInfoObj: alerts,
       });
     }).catch( err => this.setState({ loading: false }));
   })

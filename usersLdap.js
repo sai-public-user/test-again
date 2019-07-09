@@ -28,3 +28,13 @@ const setCompleteFollowersData = async (res) => {
 
   })
 }
+
+
+searchChange = ({ target: { value }}) => {
+    this.setState({ searchKey: value, radiosChecked: [] });
+    setTimeout(() => {
+        const { allRows, searchKey } = this.state;
+        const rows = allRows.filter(one => JSON.stringify(one).indexOf(searchKey) > -1);
+        this.setState({ rows });
+    }, 300);
+}

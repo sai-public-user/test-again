@@ -1,0 +1,134 @@
+.App {
+    padding: 2rem;
+}
+
+/* .tableData {
+    padding: 1rem;
+}
+
+.tableRows .ui.accordion .title {
+    width: 100%;
+}
+
+.tableheader .grid.ui {
+    margin-left: 2px !important;
+}
+
+.tableRows .ui.accordion {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+    padding-top: 0.75rem !important;
+    padding-bottom: 0.75rem !important;
+}
+
+.tableRows .ui.centered.grid {
+    border-left: 6px solid lightgreen;
+    margin-left: -8px !important;
+    font-weight: 600 !important;
+}
+
+.tableRows .accordian-content {
+    margin-top: 1.5rem;
+}
+
+.tableSearch {
+    padding: 1rem !important;
+    margin-top: 6px !important;
+} */
+
+.ui.radio.checkbox {
+    margin-left: 0.75rem;
+}
+
+/* .tableSearch .filtertag {
+    font-weight: 600 !important;
+}
+
+.tableSearch .filters {
+    display: flex;
+    align-items: center;
+}
+
+.tableSearch .search-field {
+    width: 30vw !important;
+}
+
+.tableSearch .ui.icon.input>i.icon {
+    margin-right: 10px !important
+} */
+
+.title {
+    width: 100% !important;
+    padding-left: 10px;
+}
+
+.ui.radio.checkbox .box:after, .ui.radio.checkbox label:after {
+    background-color: mediumblue !important;
+}
+
+.ui.radio.checkbox .box::before, .ui.radio.checkbox label:before {
+    border: 2px solid mediumblue !important;
+}
+
+.underline-label {
+    text-decoration: underline;
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+}
+
+.dropdown-content {
+    margin-left: 1rem !important;
+    color: black !important;
+}
+
+.catlog .dropdown-content .dropdown .default.text {
+    color: black !important;
+}
+
+.service-type {
+    font-size: 26px;
+    color: cornflowerblue;
+}
+
+.sec-text {
+    color: #777 !important;
+    font-size: 18px;
+}
+
+.oneServiceData {
+    padding: 1rem !important;
+    font-size: 18px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.starting-row {
+    background: rgba(0,0,0,0.03);
+}
+
+.catlog {
+   font-size: 18px;
+}
+
+.catlog-data {
+    margin-top: 2rem !important;
+}
+
+.catlog .ui.checkbox label {
+    font-size: 18px !important;
+}
+
+.catlog .ui.celled.grid {
+    margin-top: 0px !important;
+    margin-bottom: 0px !important;
+}
+
+.catlog .ui.segment {
+    padding: 0px;
+}
+
+/* .catlog .dropdown-content .ui.search.dropdown.row {
+    min-width: 100%;
+} */

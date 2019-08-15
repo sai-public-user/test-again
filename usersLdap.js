@@ -38,3 +38,18 @@ searchChange = ({ target: { value }}) => {
         this.setState({ rows });
     }, 300);
 }
+
+
+onCheckeBoxClick = (e, { name = null }) => {
+  if (name === null) return;
+  const { userSelection = [], allRows } = this.state;
+  const pos = userSelection.indexOf(name);
+  if (pos === -1) userSelection.push(name);
+  else userSelection.splice(pos, 1);
+  this.setState({ userSelection }, async () => {
+    const rows = await allRows.filter(({ rowData: { status = '', frequency = '' } = {} }) => 
+      userSelection.includes(status) || userSelection.includes(frequency)
+    );
+    this.setState({ rows });
+  })
+}
